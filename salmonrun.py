@@ -245,7 +245,8 @@ def salmon_post_shift(i, results):
 	headerloc = postshift.headers.get('location')
 	if headerloc != None:
 		if postshift.status_code == 302: # receive redirect
-			print("Shift #{} already uploaded to {}".format(i+1, headerloc))
+			#print("Shift #{} already uploaded to {}".format(i+1, headerloc))
+                        pass
 			# continue trying to upload remaining
 		else: # http status code should be OK (200)
 			print("Shift #{} uploaded to {}".format(i+1, headerloc))
@@ -279,7 +280,8 @@ def salmon_get_num_shifts(results):
 	'''Prompts user to upload a certain number of recent shifts.'''
 
 	try:
-		n = int(input("Number of recent Salmon Run shifts to upload (0-50)? "))
+		#n = int(input("Number of recent Salmon Run shifts to upload (0-50)? "))
+                n = 50
 	except ValueError:
 		print("Please enter an integer between 0 and 50. Exiting.")
 		exit(0)
